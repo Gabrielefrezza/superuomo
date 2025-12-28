@@ -1,100 +1,178 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Super Uomo / Super Papà</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0f172a;
-      color: #f8fafc;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-    }
-    h2 {
-      margin-top: 30px;
-      border-bottom: 1px solid #334155;
-      padding-bottom: 5px;
-    }
-    label {
-      display: block;
-      margin: 10px 0;
-      font-size: 16px;
-    }
-    input[type="checkbox"] {
-      transform: scale(1.3);
-      margin-right: 10px;
-    }
-    button {
-      margin-top: 30px;
-      width: 100%;
-      padding: 15px;
-      font-size: 18px;
-      background: #22c55e;
-      border: none;
-      border-radius: 10px;
-      color: #022c22;
-      font-weight: bold;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Uomo / Super Papà</title>
+
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background:#0f172a;
+  color:#f8fafc;
+  padding:20px;
+}
+h1 { text-align:center; }
+h2 {
+  margin-top:30px;
+  border-bottom:1px solid #334155;
+  padding-bottom:5px;
+}
+label {
+  display:block;
+  margin:10px 0;
+}
+input[type="checkbox"] {
+  transform:scale(1.3);
+  margin-right:10px;
+}
+
+/* GRAFICO */
+.progress-container {
+  display:flex;
+  justify-content:center;
+  margin:20px 0;
+}
+svg {
+  width:160px;
+  height:160px;
+}
+circle {
+  fill:none;
+  stroke-width:14;
+}
+.bg {
+  stroke:#334155;
+}
+.progress {
+  stroke:#22c55e;
+  stroke-linecap:round;
+  transform:rotate(-90deg);
+  transform-origin:50% 50%;
+  stroke-dasharray:440;
+  stroke-dashoffset:440;
+  transition:stroke-dashoffset 0.5s;
+}
+.percent {
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
+}
+
+button {
+  width:100%;
+  padding:15px;
+  font-size:18px;
+  background:#22c55e;
+  border:none;
+  border-radius:10px;
+  color:#022c22;
+  font-weight:bold;
+  margin-top:30px;
+}
+</style>
 </head>
+
 <body>
 
 <h1>🦍 Super Uomo / Super Papà</h1>
-<p style="text-align:center;">Disciplina quotidiana · Presenza · Esempio</p>
+<p style="text-align:center;">Disciplina · Presenza · Esempio</p>
+
+<div class="progress-container">
+<svg>
+  <circle class="bg" cx="80" cy="80" r="70"></circle>
+  <circle class="progress" cx="80" cy="80" r="70"></circle>
+</svg>
+</div>
+
+<div class="percent" id="percent">0%</div>
 
 <h2>🌅 Mattino</h2>
-<label><input type="checkbox">Sveglia senza rimandare</label>
-<label><input type="checkbox">Rifatto il letto</label>
-<label><input type="checkbox">Bevuto acqua</label>
-<label><input type="checkbox">Mobilità / respirazione</label>
-<label><input type="checkbox">Obiettivo del giorno</label>
-<label><input type="checkbox">Studio / lettura</label>
+<label><input type="checkbox"> Sveglia senza rimandare</label>
+<label><input type="checkbox"> Rifatto il letto</label>
+<label><input type="checkbox"> Bevuto acqua</label>
+<label><input type="checkbox"> Mobilità / respirazione</label>
+<label><input type="checkbox"> Obiettivo del giorno</label>
+<label><input type="checkbox"> Studio / lettura</label>
 
 <h2>🧠 Produttività</h2>
-<label><input type="checkbox">No telefono 60'</label>
-<label><input type="checkbox">Blocco focus</label>
-<label><input type="checkbox">Task principale completato</label>
-<label><input type="checkbox">Niente multitasking</label>
-<label><input type="checkbox">Finito ciò che ho iniziato</label>
+<label><input type="checkbox"> No telefono 60'</label>
+<label><input type="checkbox"> Blocco focus</label>
+<label><input type="checkbox"> Task principale completato</label>
+<label><input type="checkbox"> Niente multitasking</label>
+<label><input type="checkbox"> Finito ciò che ho iniziato</label>
 
 <h2>🏋️ Corpo</h2>
-<label><input type="checkbox">Allenamento svolto</label>
-<label><input type="checkbox">Allenato con intenzione</label>
-<label><input type="checkbox">Mobilità / recovery</label>
-<label><input type="checkbox">Ascoltato il corpo</label>
+<label><input type="checkbox"> Allenamento svolto</label>
+<label><input type="checkbox"> Allenato con intenzione</label>
+<label><input type="checkbox"> Mobilità / recovery</label>
+<label><input type="checkbox"> Ascoltato il corpo</label>
 
 <h2>🥗 Alimentazione</h2>
-<label><input type="checkbox">Acqua 2,5–3L</label>
-<label><input type="checkbox">Colazione proteica</label>
-<label><input type="checkbox">Proteine ogni pasto</label>
-<label><input type="checkbox">Verdura</label>
-<label><input type="checkbox">Carbo gestiti</label>
-<label><input type="checkbox">No junk food</label>
+<label><input type="checkbox"> Acqua 2,5–3L</label>
+<label><input type="checkbox"> Colazione proteica</label>
+<label><input type="checkbox"> Proteine ogni pasto</label>
+<label><input type="checkbox"> Verdura</label>
+<label><input type="checkbox"> Carbo gestiti</label>
+<label><input type="checkbox"> No junk food</label>
 
 <h2>🧠 Mente</h2>
-<label><input type="checkbox">Journaling</label>
-<label><input type="checkbox">Gratitudine</label>
-<label><input type="checkbox">Risposto con lucidità</label>
-<label><input type="checkbox">Fatto anche senza voglia</label>
+<label><input type="checkbox"> Journaling</label>
+<label><input type="checkbox"> Gratitudine</label>
+<label><input type="checkbox"> Risposto con lucidità</label>
+<label><input type="checkbox"> Fatto anche senza voglia</label>
 
 <h2>👨‍👩‍👧 Famiglia</h2>
-<label><input type="checkbox">Tempo con Noemi</label>
-<label><input type="checkbox">Supporto a mia moglie</label>
-<label><input type="checkbox">Dato esempio</label>
-<label><input type="checkbox">Creato un bel momento</label>
+<label><input type="checkbox"> Tempo con Noemi</label>
+<label><input type="checkbox"> Supporto a mia moglie</label>
+<label><input type="checkbox"> Dato esempio</label>
+<label><input type="checkbox"> Creato un bel momento</label>
 
 <h2>🌙 Sera</h2>
-<label><input type="checkbox">Stop schermi</label>
-<label><input type="checkbox">Riflessione giornata</label>
-<label><input type="checkbox">Preparato domani</label>
-<label><input type="checkbox">A letto in orario</label>
+<label><input type="checkbox"> Stop schermi</label>
+<label><input type="checkbox"> Riflessione giornata</label>
+<label><input type="checkbox"> Preparato domani</label>
+<label><input type="checkbox"> A letto in orario</label>
 
-<button onclick="alert('Giornata completata 💪')">💾 Salva giornata</button>
+<button onclick="resetDay()">🔄 Nuovo giorno</button>
+
+<script>
+const checkboxes = document.querySelectorAll("input[type='checkbox']");
+const progress = document.querySelector(".progress");
+const percentEl = document.getElementById("percent");
+const total = checkboxes.length;
+const circumference = 440;
+const today = new Date().toISOString().slice(0,10);
+
+function updateProgress(){
+  let done = 0;
+  checkboxes.forEach((cb,i)=>{
+    if(cb.checked) done++;
+    localStorage.setItem(today+"_"+i, cb.checked);
+  });
+
+  let percent = Math.round((done / total) * 100);
+  let offset = circumference - (percent / 100) * circumference;
+
+  progress.style.strokeDashoffset = offset;
+  percentEl.textContent = percent + "%";
+}
+
+checkboxes.forEach((cb,i)=>{
+  cb.checked = localStorage.getItem(today+"_"+i) === "true";
+  cb.addEventListener("change", updateProgress);
+});
+
+function resetDay(){
+  checkboxes.forEach((cb,i)=>{
+    cb.checked=false;
+    localStorage.removeItem(today+"_"+i);
+  });
+  updateProgress();
+}
+
+updateProgress();
+</script>
 
 </body>
 </html>
